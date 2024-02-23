@@ -1,0 +1,13 @@
+t=input("")
+print(t)
+a=t[0]
+a=t.split(":")
+d=a[2:]
+e=0
+e=d
+#e=d.split("")
+print(e)
+print(d)
+c=a[:-1]
+print(c)
+print(a)
