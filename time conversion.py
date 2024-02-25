@@ -1,28 +1,31 @@
-my_list = input("")
-split_chars = []
-for string in my_list:
-    for char in string:
-        split_chars.append(char)
-print(split_chars)
-c=split_chars[:-2]
-balance=split_chars[2:8]
-print("time is ", balance)
-g=''.join(balance)
-print(g)
-if 'p,m' or 'P,M' in c:
-    d=c[0:2]
-    print(d)
-    concatenated_string = ''.join(d)
-    print(concatenated_string)
-    e=0
-    concatenated_string=int(e)
-    t = e  # Example string representing a number
-    t_as_int = int(t)  # Convert the string to an integer
-    result = t_as_int + 12
-    print(result)
-    list1=list(result).split(' ')
-    
-    converted_time=
-    print(converted_time)
-else:
-    print('false')
+def convert_to_24_hour(time_str):
+    # Extract the time components
+    time_components = time_str.split(":")
+    hour = int(time_components[0])
+    print(hour)
+    minute = int(time_components[1][:-2])  # Remove "AM" or "PM" part
+    print(minute)
+    period = time_components[1][-2:]  # Get "AM" or "PM"
+    print(period)
+
+    # Convert to 24-hour format
+    if period == "AM":
+        if hour == 12:
+            hour = 0
+    elif period == "PM":
+        if hour != 12:
+            hour += 12
+
+    # Format the hour and minute as strings with leading zeros
+    hour_str = str(hour).zfill(2)
+    minute_str = str(minute).zfill(2)
+
+    # Construct the 24-hour time string
+    time_24_hour = f"{hour_str}:{minute_str}"
+
+    return time_24_hour
+
+# Test the function
+time_12_hour = input("Enter the time")
+time_24_hour = convert_to_24_hour(time_12_hour)
+print(f"The time {time_12_hour} in 24-hour format is: {time_24_hour}")
