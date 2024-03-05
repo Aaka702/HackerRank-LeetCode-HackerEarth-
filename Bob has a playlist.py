@@ -19,22 +19,8 @@
 # Output a single integer, the number of favourite singers of Bob
 #
 # Note: Use 64 bit data type
-N = int(input(""))
-sequence = []
-n = 1
-for i in range(N//2):
-    sequence.extend([n,n])
-    n *= 2
-    print(n)
-count={}
-for num in sequence:
-    if num in count:
-        count[num]+=1
-    else:
-        count[num]=1
-for num,count in count.items():
-    print(f"{count}")
-
+N=int(input(""))
+f
     
 
 
